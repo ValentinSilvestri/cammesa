@@ -1,0 +1,6 @@
+/.vscode
+/scr/pages/__pycache__
+/utils/__pycache__
+/utils/secrets.py
+/Otros
+/utils/queries.py
