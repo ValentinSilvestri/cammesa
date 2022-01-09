@@ -5,6 +5,18 @@ Proyecto tendiente a obtener datos de la [API Web de CAMMESA](https://microfe.ca
 Accede al **[Deployment](https://cammesa.herokuapp.com/)**.
 
 
+## Despliegue 📦
+
+Algunas capturas del deploy.
+
+![CAMMESA App Gif](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Streamlit_app.gif?raw=true)
+
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Screenshot_1.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Screenshot_2.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Screenshot_3.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Screenshot_4.png?raw=true)
+
+
 ## WIP 🔧
 
 Creación de las restantes páginas, actualmente solo creada la página de cuencas.
@@ -25,7 +37,6 @@ Endpoints:
 
 ## Contribuyendo 🖇️
 
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
 Cualquier tipo de contribución es bienvenida, tales como [Bugs](https://github.com/ValentinSilvestri/cammesa/issues), [Pull requests](https://github.com/ValentinSilvestri/cammesa/pulls) y comentarios.
 
 
