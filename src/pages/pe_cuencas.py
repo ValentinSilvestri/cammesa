@@ -1,12 +1,11 @@
+import os
 import re
 import pymongo
-import keyring
 import pandas as pd
 import numpy as np
 import streamlit as st
 from bokeh.plotting import figure
 from bokeh.palettes import Set1_9
-from utils import secrets
 
 
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
@@ -18,7 +17,7 @@ def get_caudales():
     """
 
     st.spinner("Obteniendo los datos de caudales...")
-    client = pymongo.MongoClient(f'mongodb+srv://{secrets.MongoDBAtlas}:{keyring.get_password("MongoDBAtlas", secrets.MongoDBAtlas)}@cammesa.v73yq.mongodb.net/test')
+    client = pymongo.MongoClient(os.environ['MONGO'])
     try:
         collection_name = client['publicaciones-especiales']['cuencas-datos-hidraulicos']
         project={
@@ -63,7 +62,7 @@ def get_cotas():
         DataFrame: Pandas DataFrame with the query result.
     """
     st.spinner("Obteniendo los datos de cotas...")
-    client = pymongo.MongoClient(f'mongodb+srv://{secrets.MongoDBAtlas}:{keyring.get_password("MongoDBAtlas", secrets.MongoDBAtlas)}@cammesa.v73yq.mongodb.net/test')
+    client = pymongo.MongoClient(os.environ['MONGO'])
     try:
         collection_name = client['publicaciones-especiales']['cuencas-datos-hidraulicos']
         project={
@@ -144,7 +143,7 @@ def get_turbinado():
         DataFrame: Pandas DataFrame with the query result.
     """
     st.spinner("Obteniendo los datos de turbinado...")
-    client = pymongo.MongoClient(f'mongodb+srv://{secrets.MongoDBAtlas}:{keyring.get_password("MongoDBAtlas", secrets.MongoDBAtlas)}@cammesa.v73yq.mongodb.net/test')
+    client = pymongo.MongoClient(os.environ['MONGO'])
     try:
         collection_name = client['publicaciones-especiales']['cuencas-datos-hidraulicos']
         project={
@@ -197,7 +196,7 @@ def get_vertido():
         DataFrame: Pandas DataFrame with the query result.
     """
     st.spinner("Obteniendo los datos de turbinado...")
-    client = pymongo.MongoClient(f'mongodb+srv://{secrets.MongoDBAtlas}:{keyring.get_password("MongoDBAtlas", secrets.MongoDBAtlas)}@cammesa.v73yq.mongodb.net/test')
+    client = pymongo.MongoClient(os.environ['MONGO'])
     try:
         collection_name = client['publicaciones-especiales']['cuencas-datos-hidraulicos']
         project={
