@@ -9,12 +9,12 @@ Accede al **[Deployment](https://cammesa.herokuapp.com/)**.
 
 Algunas capturas del deploy.
 
-![CAMMESA App Gif](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Streamlit_app.gif?raw=true)
+![CAMMESA App Gif](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Streamlit_app.gif?raw=true)
 
-![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Screenshot_1.png?raw=true)
-![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Screenshot_2.png?raw=true)
-![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Screenshot_3.png?raw=true)
-![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/tree/master/assets/Screenshot_4.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_1.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_2.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_3.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_4.png?raw=true)
 
 
 ## WIP 🔧
