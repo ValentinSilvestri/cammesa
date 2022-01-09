@@ -459,8 +459,7 @@ def write():
     p_turbinado, df_turbinado = turbinado()
     p_vertido, df_vertido = vertido()
 
-    st.title("Cammesa API data", anchor=None)
-    st.header("Publicaciones especiales - Cuencas/Datos Hidráulicos :+1:", anchor=None)
+    st.header("Publicaciones especiales - Cuencas/Datos Hidráulicos 🌊", anchor=None)
 
     with st.container():
         st.subheader("Análisis de caudales", anchor=None)

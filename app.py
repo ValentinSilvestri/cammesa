@@ -29,7 +29,7 @@ PAGES = {
 
 def main():
     st.set_page_config(
-        page_title="CAMMESA - Data Visualization",
+        page_title="API Web de CAMMESA - Data Visualization",
         page_icon="⚡️",
         layout="wide",
         initial_sidebar_state="expanded",
@@ -39,9 +39,11 @@ def main():
             'About': "# Análisis explotario de los datos de CAMMESA. Realizado por [@ValentinSilvestri](https://github.com/ValentinSilvestri)."
         }
     )
+
+    st.title("API Web de CAMMESA - Data Visualization", anchor=None)
+
     st.sidebar.title("Navigation")
     selection = st.sidebar.radio("Go to", list(PAGES.keys()), index=5, help="Seleccione una página.")
-
     page = PAGES[selection]
 
     with st.spinner(f"Cargando {selection} ..."):
