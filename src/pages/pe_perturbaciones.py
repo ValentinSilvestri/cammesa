@@ -1,5 +1,6 @@
 import os
 import re
+import datetime
 import pymongo
 import pandas as pd
 import numpy as np
@@ -84,3 +85,7 @@ def write():
                 file_name='Caudales.csv',
                 mime='text/csv',
             )
+        
+        st.subheader("Apagón eléctrico de Argentina 2019", anchor=None)
+        st.write("El apagón eléctrico de Argentina, Paraguay, Uruguay, Chile y Brasil de 2019 fue un conjunto de interrupciones del suministro de energía eléctrica producido el 16 de junio de 2019 que afectaron gran parte del territorio de dichos países. Aquí se pueden observar las perturbaciones registradas en el SADI ese día.")
+        st.table(df[df['fechaFalla'] == datetime.datetime.strptime('2019-06-16', '%Y-%m-%d').date()][['tipo', 'descripcion', 'libre']])
