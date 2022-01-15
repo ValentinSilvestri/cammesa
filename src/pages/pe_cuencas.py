@@ -272,7 +272,7 @@ def caudales():
     }, inplace=True)
 
     df['Fecha'] =  pd.to_datetime(df['Fecha'], format='%Y/%m/%d').dt.date
-    df = df.drop_duplicates().sort_values('Fecha').reset_index(drop=True)
+    df = df.drop_duplicates().sort_values('Fecha', ascending=False).reset_index(drop=True)
     df = df.replace(0, np.nan)
     p = figure(x_axis_type="datetime", title="Caudales cuencas", sizing_mode="stretch_both")
     p.grid.grid_line_alpha=0.3
@@ -345,7 +345,7 @@ def cotas():
     }, inplace=True)
 
     df['Fecha'] =  pd.to_datetime(df['Fecha'], format='%Y/%m/%d').dt.date
-    df = df.drop_duplicates().sort_values('Fecha').reset_index(drop=True)
+    df = df.drop_duplicates().sort_values('Fecha', ascending=False).reset_index(drop=True)
     df = df.replace(0, np.nan)
     p = figure(x_axis_type="datetime", title="Cotas cuencas", sizing_mode="stretch_both")
     p.grid.grid_line_alpha=0.3
@@ -394,7 +394,7 @@ def turbinado():
     }, inplace=True)
 
     df['Fecha'] =  pd.to_datetime(df['Fecha'], format='%Y/%m/%d').dt.date
-    df = df.drop_duplicates().sort_values('Fecha').reset_index(drop=True)
+    df = df.drop_duplicates().sort_values('Fecha', ascending=False).reset_index(drop=True)
     # df = df.replace(0, np.nan)
     p = figure(x_axis_type="datetime", title="Turbinado", sizing_mode="stretch_both")
     p.grid.grid_line_alpha=0.3
@@ -440,7 +440,7 @@ def vertido():
     }, inplace=True)
 
     df['Fecha'] =  pd.to_datetime(df['Fecha'], format='%Y/%m/%d').dt.date
-    df = df.drop_duplicates().sort_values('Fecha').reset_index(drop=True)
+    df = df.drop_duplicates().sort_values('Fecha', ascending=False).reset_index(drop=True)
     # df = df.replace(0, np.nan)
     p = figure(x_axis_type="datetime", title="Vertido", sizing_mode="stretch_both")
     p.grid.grid_line_alpha=0.3
