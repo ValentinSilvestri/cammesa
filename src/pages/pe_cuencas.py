@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 from bokeh.plotting import figure
-from bokeh.palettes import Set1_9
+from bokeh.palettes import Set1_9, Set3_12, Inferno256
 
 
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
@@ -484,11 +484,17 @@ def write():
                 "Yacyreta Salto Grande - Caudal Río Uruguay"
             ]
         )
+
+        if len(options)>9:
+            col = Set3_12
+        else:
+            col = Set1_9
+
         for index, value in enumerate(options):
             p_caudales.line(
                 df_caudales['Fecha'],
                 df_caudales[value],
-                color=Set1_9[index],
+                color=col[index],
                 legend_label=re.split(r" - ", value)[1].strip()
             )
         st.bokeh_chart(p_caudales)
@@ -555,11 +561,19 @@ def write():
                 'Cuenca Yacyreta - Max Salto Grande'
             ]
         )
+
+        if len(options_cotas)<=9:
+            col = Set1_9
+        elif len(options_cotas) <=12:
+            col = Set3_12
+        else:
+            col = Inferno256
+
         for index, value in enumerate(options_cotas):
             p_cotas.line(
                 df_cotas['Fecha'],
                 df_cotas[value],
-                color=Set1_9[index],
+                color=col[index],
                 legend_label=re.split(r" - ", value)[1].strip()
             )
         st.bokeh_chart(p_cotas)
@@ -598,11 +612,19 @@ def write():
                 'Cuenca Yacyreta - Salto Grande'
             ]
         )
+
+        if len(options_turbinado)<=9:
+            col = Set1_9
+        elif len(options_turbinado) <=12:
+            col = Set3_12
+        else:
+            col = Inferno256
+
         for index, value in enumerate(options_turbinado):
             p_turbinado.line(
                 df_turbinado['Fecha'],
                 df_turbinado[value],
-                color=Set1_9[index],
+                color=col[index],
                 legend_label=re.split(r" - ", value)[1].strip()
             )
         st.bokeh_chart(p_turbinado)
@@ -638,11 +660,17 @@ def write():
                 'Cuenca Yacyreta - Salto Grande'
             ]
         )
+
+        if len(options_vertido)>9:
+            col = Set3_12
+        else:
+            col = Set1_9
+
         for index, value in enumerate(options_vertido):
             p_vertido.line(
                 df_vertido['Fecha'],
                 df_vertido[value],
-                color=Set1_9[index],
+                color=col[index],
                 legend_label=re.split(r" - ", value)[1].strip()
             )
         st.bokeh_chart(p_vertido)

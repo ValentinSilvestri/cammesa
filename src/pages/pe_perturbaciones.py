@@ -58,22 +58,45 @@ def write():
     """
     p, df = perturbaciones()
 
-    st.header("Publicaciones especiales - Perturbaciones SADI 🌊", anchor=None)
+    st.header("Publicaciones especiales - Perturbaciones SADI 🆘", anchor=None)
 
     with st.container():
         st.subheader("Análisis de perturbaciones", anchor=None)
 
+        df_occ = df.groupby(['fechaFalla', 'tipo']).size().to_frame(name = 'size').reset_index()
         df_occ_total = df.groupby(['fechaFalla']).size().to_frame(name = 'size').reset_index()
         
-        p.scatter(
-            df_occ_total['fechaFalla'],
-            df_occ_total['size'],
-            legend_label='Total',
-            size=10,
-            color="navy",
-            alpha=0.5,
-            marker='x'
+        p.yaxis.ticker = list(range(1, max(df_occ_total['size'])+1))
+
+        vals = df_occ['tipo'].unique().tolist()
+        vals.append('Total')
+        
+        options = st.multiselect(
+            "Seleccionar datos a graficar.",
+            options=vals,
+            default=[
+                'Total'
+            ]
         )
+
+        for index, value in enumerate(options):
+            if value == 'Total':
+                p.scatter(
+                    df_occ_total['fechaFalla'],
+                    df_occ_total['size'],
+                    legend_label='Total',
+                    size=10,
+                    color="navy",
+                    alpha=0.5,
+                    marker='x'
+                )
+            else:
+                p.scatter(
+                    df_occ[df_occ['tipo'] == value]['fechaFalla'],
+                    df_occ[df_occ['tipo'] == value]['size'],
+                    color=Set1_9[index],
+                    legend_label=value
+                )
         st.bokeh_chart(p)
 
         with st.expander("Ver datos"):
@@ -87,5 +110,12 @@ def write():
             )
         
         st.subheader("Apagón eléctrico de Argentina 2019", anchor=None)
-        st.write("El apagón eléctrico de Argentina, Paraguay, Uruguay, Chile y Brasil de 2019 fue un conjunto de interrupciones del suministro de energía eléctrica producido el 16 de junio de 2019 que afectaron gran parte del territorio de dichos países. Aquí se pueden observar las perturbaciones registradas en el SADI ese día.")
+        st.markdown(
+            '''El apagón eléctrico de Argentina, Paraguay, Uruguay, Chile y Brasil 
+            de 2019 fue un conjunto de interrupciones del suministro de energía eléctrica 
+            producido el 16 de junio de 2019 que afectaron gran parte del territorio de 
+            dichos países[[\u00B9](https://es.wikipedia.org/wiki/Apag%C3%B3n_el%C3%A9ctrico_de_Argentina,_Paraguay_y_Uruguay_de_2019)].
+            Para más información: [Presentación del Secretario de Energía acerca del evento eléctrico del 16 de junio](http://www.energia.gob.ar/contenidos/archivos/Reorganizacion/planeamiento/publicaciones/presentacion-03-07-2019.pdf).
+            \nAquí se pueden observar las perturbaciones del SADI registradas ese día.'''
+        )
         st.table(df[df['fechaFalla'] == datetime.datetime.strptime('2019-06-16', '%Y-%m-%d').date()][['tipo', 'descripcion']])
