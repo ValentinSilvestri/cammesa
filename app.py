@@ -1,8 +1,9 @@
 import streamlit as st
-import src.pages.dg_agentes
+import src.pages.dg_demanda
 import src.pages.dg_estaciones_transf
 import src.pages.dg_consumo_gas
 import src.pages.dg_generacion
+import src.pages.dg_agentes
 import src.pages.p_catalogos
 import src.pages.pe_cuencas
 import src.pages.pe_perturbaciones
@@ -12,18 +13,19 @@ import src.pages.pe_precios_mercado
 
 PAGES = {
     # demanda-generacion
-    "Agentes": src.pages.dg_agentes,
-    "Estaciones transformadoras": src.pages.dg_estaciones_transf,
-    "Consumo de gas": src.pages.dg_consumo_gas,
-    "Generación por región": src.pages.dg_generacion,
+    "Demanda y generación": src.pages.dg_demanda,
+    # "Estaciones transformadoras": src.pages.dg_estaciones_transf,
+    # "Agentes": src.pages.dg_agentes,
+    # "Consumo de gas": src.pages.dg_consumo_gas,
+    # "Generación por región": src.pages.dg_generacion,
     # publicaciones
-    "Catálogos": src.pages.p_catalogos,
+    # "Catálogos": src.pages.p_catalogos,
     # publicaciones-especiales
-    "Cuencas - Hidráulica": src.pages.pe_cuencas,
     "Perturbaciones": src.pages.pe_perturbaciones,
-    "Cubrimiento pico": src.pages.pe_cubrimiento_pico,
-    "Costo marginal": src.pages.pe_costo_marginal,
-    "Precios de mercado": src.pages.pe_precios_mercado,
+    "Cuencas - Hidráulica": src.pages.pe_cuencas,
+    # "Cubrimiento pico": src.pages.pe_cubrimiento_pico,
+    # "Costo marginal": src.pages.pe_costo_marginal,
+    # "Precios de mercado": src.pages.pe_precios_mercado,
 }
 
 
@@ -43,7 +45,7 @@ def main():
     st.title("API Web de CAMMESA - Data Visualization", anchor=None)
 
     st.sidebar.title("Navigation")
-    selection = st.sidebar.radio("Go to", list(PAGES.keys()), index=5, help="Seleccione una página.")
+    selection = st.sidebar.radio("Ir a:", list(PAGES.keys()), index=2, help="Seleccione una página para visualizar los datos.")
     page = PAGES[selection]
 
     with st.spinner(f"Cargando {selection} ..."):

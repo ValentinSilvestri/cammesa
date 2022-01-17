@@ -222,13 +222,6 @@ class DemandaGeneracion(object):
             return response
 
     @staticmethod
-    def consumoGasPDPlanGas(region):
-        url = f"https://api.cammesa.com/demanda-svc/demanda/ObtieneDemandaYTemperaturaRegion?id_region={region}"
-        response = requests.request("GET", url)
-        if response.status_code == 200:
-            return response
-
-    @staticmethod
     def RegionesDemanda():
         url = "https://api.cammesa.com/demanda-svc/demanda/RegionesDemanda"
         response = requests.request("GET", url)
@@ -248,5 +241,10 @@ class DemandaGeneracion(object):
         response = requests.request("GET", url)
         if response.status_code == 200:
             return response
-
-
+    
+    @staticmethod
+    def ObtieneDemandaYTemperaturaRegion(region):
+        url = f"https://api.cammesa.com/demanda-svc/demanda/ObtieneDemandaYTemperaturaRegion?id_region={region}"
+        response = requests.request("GET", url)
+        if response.status_code == 200:
+            return response
