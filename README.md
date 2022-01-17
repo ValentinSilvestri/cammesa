@@ -5,7 +5,7 @@ Proyecto tendiente a obtener datos de la [API Web de CAMMESA](https://microfe.ca
 Accede al **[Deployment](https://cammesa.herokuapp.com/)**.
 
 
-## Despliegue 📦
+## Deploy 📦
 
 Algunas capturas del deploy.
 
@@ -15,11 +15,19 @@ Algunas capturas del deploy.
 ![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_2.png?raw=true)
 ![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_3.png?raw=true)
 ![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_4.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_5.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_6.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_7.png?raw=true)
+![CAMMESA App Screnshot 1](https://github.com/ValentinSilvestri/cammesa/blob/master/assets/Screenshot_8.png?raw=true)
 
 
 ## WIP 🔧
 
-Creación de las restantes páginas, actualmente solo creada la página de cuencas.
+Actualmente solo se han creado las páginas de demanda por región (datos con una frecuencia de 5 min, actualizados al cargar la página), cuencas y perturbaciones del SADI (datos históricos hasta el 03/01/2022).
+
+* Creación de las restantes páginas.
+* Actualización on demand de los datos históricos almacenados en MongoDB.
+* Incorporación de tooltips y widgets a los elementos gráficos. Incorporación de gráficos adicionales en las actuales páginas.
 
 
 ## Construido con 🛠️
@@ -45,4 +53,4 @@ Cualquier tipo de contribución es bienvenida, tales como [Bugs](https://github.
 Este proyecto está bajo la _MIT License_ - mira el archivo [LICENSE](LICENSE) para detalles.
 
 ---
-⌨️ con ❤️ por [VSilvestri](https://www.linkedin.com/in/valentinsilvestri/) ☕
+⌨️ con ❤️ y ☕ por [VSilvestri](https://www.linkedin.com/in/valentinsilvestri/).
